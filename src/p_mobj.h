@@ -245,6 +245,7 @@ typedef enum
   // cosmetic
   MIF_FLIP            = 0x00000010,
   MIF_SPAWNED_BY_ICON = 0x00000020,
+  MIF_PARAMSOUND      = 0x00000040, // Object is a parameterized SNDINFO / MUSINFO player
 } mobjflag_int_t;
 
 // Map Object definition.
@@ -323,7 +324,6 @@ typedef struct mobj_s
     int32_t             id;
     int32_t             special;
     int32_t             args[5];
-    boolean             paramsound;
 
     // Translucency
     byte*               tranmap;

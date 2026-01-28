@@ -1374,19 +1374,9 @@ spawnit:
   // Since all ambient sound players will share a doomednum, we'll have to
   // force certain properties.
 
-  if (paramsound)
-  {
-    mobj->paramsound = true;
-  }
-  else
-  {
-    mobj->paramsound = false;
-  }
+  if (paramsound) mobj->intflags &= MIF_PARAMSOUND;
 
-  if (nogravsound)
-  {
-    mobj->flags &= ~MF_NOGRAVITY;
-  }
+  if (nogravsound) mobj->flags &= MF_NOGRAVITY;
 
   if (mobj->tics > 0)
     mobj->tics = 1 + (P_Random (pr_spawnthing) % mobj->tics);
