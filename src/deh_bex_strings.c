@@ -25,6 +25,7 @@
 #include "deh_main.h"
 #include "deh_strings.h"
 #include "doomtype.h"
+#include "dsdh_main.h"
 #include "i_system.h"
 #include "info.h"
 #include "m_misc.h"
@@ -502,6 +503,7 @@ static boolean HandleExtendedObituary(char *mnemonic, char *string)
 
     if (sscanf(mnemonic, "Obituary_Deh_Actor_%d", &actor) == 1)
     {
+        actor = DSDH_ThingTranslate(actor);
         if (actor >= 0 && actor < num_mobj_types)
         {
             if (M_StringEndsWith(mnemonic, "_Melee"))
